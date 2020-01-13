@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mario Bros Blazor</title>
+    <base href="/" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.8.x-->
+    <link rel="stylesheet" href="lib/bulma/css/bulma.css" />
+    <link rel="stylesheet" type="text/css" href="site.css">
+    <link href="Assets/Fonts/LCDBOLD/font.css" rel="stylesheet" />
+</head>
+<body>
+    <app>Loading...</app>
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script type="text/javascript">
+
+        window.onkeydown = function (e) {
+            switch (e.key) {
+                case "1":
+                    DotNet.invokeMethodAsync('MarioBros.Blazor', 'PushCommand', "acl");
+                    break;
+                case "3":
+                    DotNet.invokeMethodAsync('MarioBros.Blazor', 'PushCommand', "gamea");
+                    break;
+                case "a":
+                case "A":
+                    DotNet.invokeMethodAsync('MarioBros.Blazor', 'PushCommand', "luigiup");
+                    break;
+                case "z":
+                case "Z":
+                    DotNet.invokeMethodAsync('MarioBros.Blazor', 'PushCommand', "luigidown");
+                    break;
+                case "k":
+                case "K":
+                    DotNet.invokeMethodAsync('MarioBros.Blazor', 'PushCommand', "marioup");
+                    break;
+                case "m":
+                case "M":
+                    DotNet.invokeMethodAsync('MarioBros.Blazor', 'PushCommand', "mariodown");
+                    break;
+                default:
+                    break;
+            }
+        };
+
+    </script>
+</body>
+</html>

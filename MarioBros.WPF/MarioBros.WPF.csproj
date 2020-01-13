@@ -1,0 +1,216 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\ApplicationIcon.png" />
+    <None Remove="Assets\background.png" />
+    <None Remove="Assets\cover.png" />
+    <None Remove="Assets\Fonts\DIGITAL.TXT" />
+    <None Remove="Assets\Fonts\DS-DIGI.TTF" />
+    <None Remove="Assets\Fonts\DS-DIGIB.TTF" />
+    <None Remove="Assets\Fonts\DS-DIGII.TTF" />
+    <None Remove="Assets\Fonts\DS-DIGIT.TTF" />
+    <None Remove="Assets\GoDown.png" />
+    <None Remove="Assets\GoNeutral.png" />
+    <None Remove="Assets\GoUp.png" />
+    <None Remove="Assets\images\AM.png" />
+    <None Remove="Assets\images\crash-0.png" />
+    <None Remove="Assets\images\crash-1.png" />
+    <None Remove="Assets\images\life.png" />
+    <None Remove="Assets\images\luigi-0-l.png" />
+    <None Remove="Assets\images\luigi-0-r.png" />
+    <None Remove="Assets\images\luigi-0.png" />
+    <None Remove="Assets\images\luigi-1-l.png" />
+    <None Remove="Assets\images\luigi-1-r.png" />
+    <None Remove="Assets\images\luigi-1.png" />
+    <None Remove="Assets\images\luigi-2-l.png" />
+    <None Remove="Assets\images\luigi-2-r.png" />
+    <None Remove="Assets\images\luigi-error-l.png" />
+    <None Remove="Assets\images\luigi-error-r.png" />
+    <None Remove="Assets\images\luigi-finished-l.png" />
+    <None Remove="Assets\images\luigi-finished-r.png" />
+    <None Remove="Assets\images\mario-0-l.png" />
+    <None Remove="Assets\images\mario-0-r.png" />
+    <None Remove="Assets\images\mario-0.png" />
+    <None Remove="Assets\images\mario-1-l.png" />
+    <None Remove="Assets\images\mario-1-r.png" />
+    <None Remove="Assets\images\mario-1.png" />
+    <None Remove="Assets\images\mario-2-l.png" />
+    <None Remove="Assets\images\mario-2-r.png" />
+    <None Remove="Assets\images\mario-2.png" />
+    <None Remove="Assets\images\mario-error-l.png" />
+    <None Remove="Assets\images\mario-error-r.png" />
+    <None Remove="Assets\images\mario-finished-l.png" />
+    <None Remove="Assets\images\mario-finished-r.png" />
+    <None Remove="Assets\images\miss.png" />
+    <None Remove="Assets\images\pack01.png" />
+    <None Remove="Assets\images\pack0L.png" />
+    <None Remove="Assets\images\pack0LH.png" />
+    <None Remove="Assets\images\pack0R.png" />
+    <None Remove="Assets\images\pack1R.png" />
+    <None Remove="Assets\images\pack1RH.png" />
+    <None Remove="Assets\images\pack2L.png" />
+    <None Remove="Assets\images\pack2LH.png" />
+    <None Remove="Assets\images\pack3L.png" />
+    <None Remove="Assets\images\pack3R.png" />
+    <None Remove="Assets\images\pack3RH.png" />
+    <None Remove="Assets\images\pack4L.png" />
+    <None Remove="Assets\images\PM.png" />
+    <None Remove="Assets\images\T0.png" />
+    <None Remove="Assets\images\T1.png" />
+    <None Remove="Assets\images\T2.png" />
+    <None Remove="Assets\images\T3.png" />
+    <None Remove="Assets\images\T4.png" />
+    <None Remove="Assets\images\T5.png" />
+    <None Remove="Assets\Logo.png" />
+    <None Remove="Assets\mario-bros.png" />
+    <None Remove="Assets\MarioBros.ico" />
+    <None Remove="Assets\panel.png" />
+    <None Remove="Assets\screen.png" />
+    <None Remove="Assets\sounds\Miss1.wav" />
+    <None Remove="Assets\sounds\Miss2.wav" />
+    <None Remove="Assets\sounds\Movebox.wav" />
+    <None Remove="Assets\sounds\Movechar.wav" />
+    <None Remove="Assets\sounds\Point.wav" />
+    <None Remove="Assets\Tiles\FlipCycleTileLarge.png" />
+    <None Remove="Assets\Tiles\FlipCycleTileMedium.png" />
+    <None Remove="Assets\Tiles\FlipCycleTileSmall.png" />
+    <None Remove="Assets\Tiles\IconicTileMediumLarge.png" />
+    <None Remove="Assets\Tiles\IconicTileSmall.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Fonts\DS-DIGI.TTF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fonts\DS-DIGIB.TTF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fonts\DS-DIGII.TTF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fonts\DS-DIGIT.TTF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\sounds\Miss1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\sounds\Miss2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\sounds\Movebox.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\sounds\Movechar.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\sounds\Point.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LcdGames.Core\LcdGames.Core.csproj" />
+    <ProjectReference Include="..\MarioBros.Core\MarioBros.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\background.png" />
+    <Resource Include="Assets\cover.png" />
+    <Resource Include="Assets\Fonts\DIGITAL.TXT" />
+    <Resource Include="Assets\GoDown.png" />
+    <Resource Include="Assets\GoNeutral.png" />
+    <Resource Include="Assets\GoUp.png" />
+    <Resource Include="Assets\images\AM.png" />
+    <Resource Include="Assets\images\crash-0.png" />
+    <Resource Include="Assets\images\crash-1.png" />
+    <Resource Include="Assets\images\life.png" />
+    <Resource Include="Assets\images\luigi-0-l.png" />
+    <Resource Include="Assets\images\luigi-0-r.png" />
+    <Resource Include="Assets\images\luigi-0.png" />
+    <Resource Include="Assets\images\luigi-1-l.png" />
+    <Resource Include="Assets\images\luigi-1-r.png" />
+    <Resource Include="Assets\images\luigi-1.png" />
+    <Resource Include="Assets\images\luigi-2-l.png" />
+    <Resource Include="Assets\images\luigi-2-r.png" />
+    <Resource Include="Assets\images\luigi-error-l.png" />
+    <Resource Include="Assets\images\luigi-error-r.png" />
+    <Resource Include="Assets\images\luigi-finished-l.png" />
+    <Resource Include="Assets\images\luigi-finished-r.png" />
+    <Resource Include="Assets\images\mario-0-l.png" />
+    <Resource Include="Assets\images\mario-0-r.png" />
+    <Resource Include="Assets\images\mario-0.png" />
+    <Resource Include="Assets\images\mario-1-l.png" />
+    <Resource Include="Assets\images\mario-1-r.png" />
+    <Resource Include="Assets\images\mario-1.png" />
+    <Resource Include="Assets\images\mario-2-l.png" />
+    <Resource Include="Assets\images\mario-2-r.png" />
+    <Resource Include="Assets\images\mario-2.png" />
+    <Resource Include="Assets\images\mario-error-l.png" />
+    <Resource Include="Assets\images\mario-error-r.png" />
+    <Resource Include="Assets\images\mario-finished-l.png" />
+    <Resource Include="Assets\images\mario-finished-r.png" />
+    <Resource Include="Assets\images\miss.png" />
+    <Resource Include="Assets\images\pack01.png" />
+    <Resource Include="Assets\images\pack0L.png" />
+    <Resource Include="Assets\images\pack0LH.png" />
+    <Resource Include="Assets\images\pack0R.png" />
+    <Resource Include="Assets\images\pack1R.png" />
+    <Resource Include="Assets\images\pack1RH.png" />
+    <Resource Include="Assets\images\pack2L.png" />
+    <Resource Include="Assets\images\pack2LH.png" />
+    <Resource Include="Assets\images\pack3L.png" />
+    <Resource Include="Assets\images\pack3R.png" />
+    <Resource Include="Assets\images\pack3RH.png" />
+    <Resource Include="Assets\images\pack4L.png" />
+    <Resource Include="Assets\images\PM.png" />
+    <Resource Include="Assets\images\T0.png" />
+    <Resource Include="Assets\images\T1.png" />
+    <Resource Include="Assets\images\T2.png" />
+    <Resource Include="Assets\images\T3.png" />
+    <Resource Include="Assets\images\T4.png" />
+    <Resource Include="Assets\images\T5.png" />
+    <Resource Include="Assets\Logo.png" />
+    <Resource Include="Assets\mario-bros.png" />
+    <Resource Include="Assets\MarioBros.ico" />
+    <Resource Include="Assets\panel.png" />
+    <Resource Include="Assets\screen.png" />
+    <Resource Include="Assets\Tiles\FlipCycleTileLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Tiles\FlipCycleTileMedium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Tiles\FlipCycleTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Tiles\IconicTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\MarioBrosView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MarioBrosView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\MarioBrosView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

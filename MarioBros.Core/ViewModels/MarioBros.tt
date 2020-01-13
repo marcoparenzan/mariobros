@@ -1,0 +1,178 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using LcdGames;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace MarioBros.ViewModels
+{
+<#
+		var pins = new[] {
+              new { Name = "LF0" }
+            , new { Name = "LF1" }
+            , new { Name = "LF2" }
+            , new { Name = "L2" }
+            , new { Name = "L2L" }
+            , new { Name = "L2R" }
+            , new { Name = "L1" }
+            , new { Name = "L1L" }
+            , new { Name = "L1R" }
+            , new { Name = "L0" }
+            , new { Name = "L0L" }
+            , new { Name = "L0R" }
+            , new { Name = "M2" }
+            , new { Name = "M2L" }
+            , new { Name = "M2R" }
+            , new { Name = "M1" }
+            , new { Name = "M1L" }
+            , new { Name = "M1R" }
+	        , new { Name = "M0" }
+            , new { Name = "M0L" }
+            , new { Name = "M0R" }
+            , new { Name = "P0" }
+            , new { Name = "P1" }
+            , new { Name = "P2" }
+            , new { Name = "P3" }
+            , new { Name = "P4" }
+            , new { Name = "P5" }
+            , new { Name = "P5P6" }
+            , new { Name = "P6" }
+            , new { Name = "P7" }
+            , new { Name = "P8" }
+            , new { Name = "P9" }
+            , new { Name = "P10" }
+            , new { Name = "P11" }
+            , new { Name = "P12" }
+            , new { Name = "P13" }
+            , new { Name = "P13P14" }
+			, new { Name = "P14" }
+            , new { Name = "P15" }
+            , new { Name = "P16" }
+            , new { Name = "P17" }
+            , new { Name = "P18" }
+            , new { Name = "P19" }
+            , new { Name = "P20" }
+            , new { Name = "P21" }
+            , new { Name = "P21P22" }
+			, new { Name = "P22" }
+            , new { Name = "P23" }
+            , new { Name = "P24" }
+            , new { Name = "P25" }
+            , new { Name = "P26" }
+            , new { Name = "P27" }
+            , new { Name = "P28" }
+            , new { Name = "P29" }
+            , new { Name = "P29P30" }
+            , new { Name = "P30" }
+            , new { Name = "P31" }
+            , new { Name = "P32" }
+            , new { Name = "P33" }
+            , new { Name = "P34" }
+            , new { Name = "P35" }
+            , new { Name = "P36" }
+            , new { Name = "P37" }
+            , new { Name = "P37P38" }
+            , new { Name = "P38" }
+            , new { Name = "P39" }
+            , new { Name = "P40" }
+            , new { Name = "P41" }
+            , new { Name = "PT0" }
+            , new { Name = "PT1" }
+            , new { Name = "PT2" }
+            , new { Name = "PT3" }
+            , new { Name = "PT4" }
+            , new { Name = "PT5" }
+            , new { Name = "PT6" }
+            , new { Name = "PT7" }
+            , new { Name = "PT8" }
+            , new { Name = "PT9" }
+            , new { Name = "T0" }
+            , new { Name = "T1" }
+            , new { Name = "T2" }
+            , new { Name = "T3" }
+            , new { Name = "T4" }
+            , new { Name = "T5" }
+            , new { Name = "PC0" }
+            , new { Name = "PC1" }
+            , new { Name = "PC2" }
+            , new { Name = "MFR" }
+            , new { Name = "MFL" }
+            , new { Name = "LFR" }
+            , new { Name = "LFL" }
+            , new { Name = "MER" }
+            , new { Name = "MEL" }
+            , new { Name = "LER" }
+            , new { Name = "LEL" }
+            , new { Name = "AM" }
+            , new { Name = "PM" }
+            , new { Name = "PS" }
+            , new { Name = "MT" }
+  };
+#>
+    public class MarioBrosPin
+    {
+        public static readonly string[] Names = {
+<#
+	var first = true;
+	foreach(var pin in pins)
+	{
+		if (first)
+			first = false;
+		else
+		{
+#>
+		,
+<#
+		}
+#>
+		"<#= pin.Name #>"
+<#
+	}
+#>
+		};
+
+		<#
+	var i = 0;
+	foreach(var pin in pins)
+	{
+#>
+        public static readonly LcdGamePin <#= pin.Name #> = new LcdGamePin(<#= i #>);
+<#
+		i++;
+	}
+#>
+
+        public static readonly int Count = <#= i #>;
+	}
+
+    public partial class MarioBrosViewModel
+    {
+<#
+	foreach(var pin in pins)
+	{
+#>
+        public LcdGamePinState <#= pin.Name #>
+        {
+            get
+            {
+                return Get(MarioBrosPin.<#= pin.Name #>);
+            }
+
+            set
+            {
+                Set(MarioBrosPin.<#= pin.Name #>, value);
+            }
+        }
+<#
+	}
+#>
+	}
+}

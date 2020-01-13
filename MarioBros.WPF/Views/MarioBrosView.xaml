@@ -1,0 +1,239 @@
+﻿<Window x:Class="MarioBros.WPF.Views.MarioBrosView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:conv="clr-namespace:MarioBros.Converters"
+        Title="Mario Bros" Height="451" Width="710"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Icon="/MarioBros.WPF;component/Assets/MarioBros.ico"
+        FontFamily="/Assets/Fonts/DS-DIGIB.TTF#DS-Digital" 
+  >
+    <Window.Resources>
+        <conv:LcdState2VisibilityConverter x:Key="lcdState" />
+        <conv:LostLives2VisibilityConverter x:Key="lostLives" />
+    </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding MarioUp}" Key="K"></KeyBinding>
+        <KeyBinding Command="{Binding MarioDown}" Key="M"></KeyBinding>
+        <KeyBinding Command="{Binding LuigiUp}" Key="A"></KeyBinding>
+        <KeyBinding Command="{Binding LuigiDown}" Key="Z"></KeyBinding>
+        <KeyBinding Command="{Binding ACL}" Key="D1"></KeyBinding>
+        <KeyBinding Command="{Binding Alarm}" Key="D2"></KeyBinding>
+        <KeyBinding Command="{Binding GameA}" Key="D3"></KeyBinding>
+        <KeyBinding Command="{Binding GameB}" Key="D4"></KeyBinding>
+        <KeyBinding Command="{Binding Time}" Key="D5"></KeyBinding>
+        <KeyBinding Command="{Binding Pause}" Key="D6"></KeyBinding>
+        <KeyBinding Command="{Binding Mute}" Key="D7"></KeyBinding>
+    </Window.InputBindings>
+    <Canvas>
+        <Image Source="../Assets/cover.png" Canvas.Left="-1"/>
+        <Canvas Canvas.Left="80" Canvas.Top="60">
+            <Image Source="../Assets/screen.png" Canvas.Left="-1"/>
+            <!-- luigi -->
+            <Image Source="../Assets/images/luigi-2-r.png" Visibility="{Binding L2R, Converter={StaticResource lcdState}}" Canvas.Left="118" Canvas.Top="20"/>
+            <Image Source="../Assets/images/luigi-2-l.png" Visibility="{Binding L2L, Converter={StaticResource lcdState}}" Canvas.Left="89" Canvas.Top="12"/>
+            <Image Source="../Assets/images/luigi-1.png" Visibility="{Binding L1, Converter={StaticResource lcdState}}" Canvas.Left="121" Canvas.Top="67"/>
+            <Image Source="../Assets/images/luigi-1-l.png" Visibility="{Binding L1L, Converter={StaticResource lcdState}}" Canvas.Left="151" Canvas.Top="66"/>
+            <Image Source="../Assets/images/luigi-1-r.png" Visibility="{Binding L1R, Converter={StaticResource lcdState}}" Canvas.Left="144" Canvas.Top="89"/>
+            <Image Source="../Assets/images/luigi-0.png" Visibility="{Binding L0, Converter={StaticResource lcdState}}" Canvas.Left="122" Canvas.Top="115"/>
+            <Image Source="../Assets/images/luigi-0-l.png" Visibility="{Binding L0L, Converter={StaticResource lcdState}}" Canvas.Left="151" Canvas.Top="114"/>
+            <Image Source="../Assets/images/luigi-0-r.png" Visibility="{Binding L0R, Converter={StaticResource lcdState}}" Canvas.Left="143" Canvas.Top="132"/>
+            <!-- mario -->
+            <Image Source="../Assets/images/mario-2.png" Visibility="{Binding M2, Converter={StaticResource lcdState}}" Canvas.Left="386" Canvas.Top="43"/>
+            <Image Source="../Assets/images/mario-2-l.png" Visibility="{Binding M2L, Converter={StaticResource lcdState}}" Canvas.Left="381" Canvas.Top="40"/>
+            <Image Source="../Assets/images/mario-2-r.png" Visibility="{Binding M2R, Converter={StaticResource lcdState}}" Canvas.Left="386" Canvas.Top="61"/>
+            <Image Source="../Assets/images/mario-1.png" Visibility="{Binding M1, Converter={StaticResource lcdState}}" Canvas.Left="386" Canvas.Top="92"/>
+            <Image Source="../Assets/images/mario-1-l.png" Visibility="{Binding M1L, Converter={StaticResource lcdState}}" Canvas.Left="379" Canvas.Top="88"/>
+            <Image Source="../Assets/images/mario-1-r.png" Visibility="{Binding M1R, Converter={StaticResource lcdState}}" Canvas.Left="384" Canvas.Top="108"/>
+            <Image Source="../Assets/images/mario-0.png" Visibility="{Binding M0, Converter={StaticResource lcdState}}" Canvas.Left="399" Canvas.Top="154"/>
+            <Image Source="../Assets/images/mario-0-l.png" Visibility="{Binding M0L, Converter={StaticResource lcdState}}" Canvas.Left="375" Canvas.Top="134"/>
+            <Image Source="../Assets/images/mario-0-r.png" Visibility="{Binding M0R, Converter={StaticResource lcdState}}" Canvas.Left="413" Canvas.Top="134"/>
+            <!-- pack row load -->
+            <Image Source="../Assets/images/pack0R.png" Visibility="{Binding P2, Converter={StaticResource lcdState}}" Canvas.Left="440" Canvas.Top="147">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-27.752"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Source="../Assets/images/pack0R.png" Visibility="{Binding P1, Converter={StaticResource lcdState}}" Canvas.Left="465" Canvas.Top="140"/>
+            <Image Source="../Assets/images/pack0R.png" Visibility="{Binding P0, Converter={StaticResource lcdState}}" Canvas.Left="490" Canvas.Top="140"/>
+            <!-- pack row 0 right -->
+            <Image Source="../Assets/images/pack0R.png" Visibility="{Binding P5, Converter={StaticResource lcdState}}" Canvas.Left="294" Canvas.Top="140"/>
+            <Image Source="../Assets/images/pack0R.png" Visibility="{Binding P4, Converter={StaticResource lcdState}}" Canvas.Left="324" Canvas.Top="140"/>
+            <Image Source="../Assets/images/pack0R.png" Visibility="{Binding P3, Converter={StaticResource lcdState}}" Canvas.Left="354" Canvas.Top="140"/>
+            <!-- pack row 0 left -->
+            <Image Source="../Assets/images/pack0L.png" Visibility="{Binding P9, Converter={StaticResource lcdState}}" Canvas.Left="149" Canvas.Top="142">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-21.896"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Source="../Assets/images/pack0L.png" Visibility="{Binding P8, Converter={StaticResource lcdState}}" Canvas.Left="173" Canvas.Top="137"/>
+            <Image Source="../Assets/images/pack0L.png" Visibility="{Binding P7, Converter={StaticResource lcdState}}" Canvas.Left="203" Canvas.Top="137"/>
+            <Image Source="../Assets/images/pack0L.png" Visibility="{Binding P6, Converter={StaticResource lcdState}}" Canvas.Left="233" Canvas.Top="137"/>
+            <!-- pack row 1 left -->
+            <Image Source="../Assets/images/pack0L.png" Visibility="{Binding P10, Converter={StaticResource lcdState}}" Canvas.Left="166" Canvas.Top="113"/>
+            <Image Source="../Assets/images/pack0L.png" Visibility="{Binding P11, Converter={StaticResource lcdState}}" Canvas.Left="191" Canvas.Top="113"/>
+            <Image Source="../Assets/images/pack0L.png" Visibility="{Binding P12, Converter={StaticResource lcdState}}" Canvas.Left="216" Canvas.Top="113"/>
+            <Image Source="../Assets/images/pack0LH.png" Visibility="{Binding P13, Converter={StaticResource lcdState}}" Canvas.Left="240" Canvas.Top="113"/>
+
+            <!-- pack row 1 right -->
+            <Image Source="../Assets/images/pack1R.png" Visibility="{Binding P14, Converter={StaticResource lcdState}}" Canvas.Left="293" Canvas.Top="113"/>
+            <Image Source="../Assets/images/pack1R.png" Visibility="{Binding P15, Converter={StaticResource lcdState}}" Canvas.Left="319" Canvas.Top="113"/>
+            <Image Source="../Assets/images/pack1R.png" Visibility="{Binding P16, Converter={StaticResource lcdState}}" Canvas.Left="349" Canvas.Top="113"/>
+            <Image Source="../Assets/images/pack1R.png" Visibility="{Binding P17, Converter={StaticResource lcdState}}" Canvas.Left="380" Canvas.Top="111">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="28.96"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <!-- pack row 2 right -->
+            <Image Source="../Assets/images/pack1RH.png" Visibility="{Binding P21, Converter={StaticResource lcdState}}" Canvas.Left="293" Canvas.Top="89"/>
+            <Image Source="../Assets/images/pack1R.png" Visibility="{Binding P20, Converter={StaticResource lcdState}}" Canvas.Left="310" Canvas.Top="90"/>
+            <Image Source="../Assets/images/pack1R.png" Visibility="{Binding P19, Converter={StaticResource lcdState}}" Canvas.Left="335" Canvas.Top="89"/>
+            <Image Source="../Assets/images/pack1R.png" Visibility="{Binding P18, Converter={StaticResource lcdState}}" Canvas.Left="359" Canvas.Top="89"/>
+            <!-- pack row 2 left -->
+            <Image Source="../Assets/images/pack2L.png" Visibility="{Binding P25, Converter={StaticResource lcdState}}" Canvas.Left="153" Canvas.Top="90" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-27.002"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Source="../Assets/images/pack2L.png" Visibility="{Binding P24, Converter={StaticResource lcdState}}" Canvas.Left="179" Canvas.Top="90"/>
+            <Image Source="../Assets/images/pack2L.png" Visibility="{Binding P23, Converter={StaticResource lcdState}}" Canvas.Left="207" Canvas.Top="90"/>
+            <Image Source="../Assets/images/pack2L.png" Visibility="{Binding P22, Converter={StaticResource lcdState}}" Canvas.Left="233" Canvas.Top="90"/>
+            <!-- pack row 3 left -->
+            <Image Source="../Assets/images/pack2L.png" Visibility="{Binding P26, Converter={StaticResource lcdState}}" Canvas.Left="160" Canvas.Top="67"/>
+            <Image Source="../Assets/images/pack2L.png" Visibility="{Binding P27, Converter={StaticResource lcdState}}" Canvas.Left="184" Canvas.Top="67"/>
+            <Image Source="../Assets/images/pack2L.png" Visibility="{Binding P28, Converter={StaticResource lcdState}}" Canvas.Left="212" Canvas.Top="67"/>
+            <Image Source="../Assets/images/pack2LH.png" Visibility="{Binding P29, Converter={StaticResource lcdState}}" Canvas.Left="240" Canvas.Top="67"/>
+            <!-- pack row 3 right -->
+            <Image Source="../Assets/images/pack3R.png" Visibility="{Binding P30, Converter={StaticResource lcdState}}" Canvas.Left="292" Canvas.Top="66"/>
+            <Image Source="../Assets/images/pack3R.png" Visibility="{Binding P31, Converter={StaticResource lcdState}}" Canvas.Left="317" Canvas.Top="66"/>
+            <Image Source="../Assets/images/pack3R.png" Visibility="{Binding P32, Converter={StaticResource lcdState}}" Canvas.Left="342" Canvas.Top="66"/>
+            <Image Source="../Assets/images/pack3R.png" Visibility="{Binding P33, Converter={StaticResource lcdState}}" Canvas.Left="372" Canvas.Top="62">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="23.655"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+            <!-- pack row 4 right -->
+            <Image Source="../Assets/images/pack3RH.png" Visibility="{Binding P37, Converter={StaticResource lcdState}}" Canvas.Left="293" Canvas.Top="43"/>
+            <Image Source="../Assets/images/pack3R.png" Visibility="{Binding P36, Converter={StaticResource lcdState}}" Canvas.Left="308" Canvas.Top="43"/>
+            <Image Source="../Assets/images/pack3R.png" Visibility="{Binding P35, Converter={StaticResource lcdState}}" Canvas.Left="332" Canvas.Top="43"/>
+            <Image Source="../Assets/images/pack3R.png" Visibility="{Binding P34, Converter={StaticResource lcdState}}" Canvas.Left="356" Canvas.Top="43"/>
+            <!-- pack row 4 left -->
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding P41, Converter={StaticResource lcdState}}" Canvas.Left="154" Canvas.Top="47" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-25.906"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding P40, Converter={StaticResource lcdState}}" Canvas.Left="179" Canvas.Top="44"/>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding P39, Converter={StaticResource lcdState}}" Canvas.Left="204" Canvas.Top="44"/>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding P38, Converter={StaticResource lcdState}}" Canvas.Left="229" Canvas.Top="44"/>
+
+            <!-- pack truck -->
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding PT0, Converter={StaticResource lcdState}}" Canvas.Left="53" Canvas.Top="85"/>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding PT2, Converter={StaticResource lcdState}}" Canvas.Left="53" Canvas.Top="72"/>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding PT4, Converter={StaticResource lcdState}}" Canvas.Left="53" Canvas.Top="58"/>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding PT6, Converter={StaticResource lcdState}}" Canvas.Left="53" Canvas.Top="46"/>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding PT8, Converter={StaticResource lcdState}}" Canvas.Left="53" Canvas.Top="30" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-16.975"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding PT1, Converter={StaticResource lcdState}}" Canvas.Left="75" Canvas.Top="85"/>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding PT3, Converter={StaticResource lcdState}}" Canvas.Left="75" Canvas.Top="72"/>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding PT5, Converter={StaticResource lcdState}}" Canvas.Left="75" Canvas.Top="58"/>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding PT7, Converter={StaticResource lcdState}}" Canvas.Left="75" Canvas.Top="46"/>
+            <Image Source="../Assets/images/pack4L.png" Visibility="{Binding PT9, Converter={StaticResource lcdState}}" Canvas.Left="78" Canvas.Top="23">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="18.888"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+            <!-- truck -->
+            <Image Source="../Assets/images/T0.png" Visibility="{Binding T0, Converter={StaticResource lcdState}}" Canvas.Left="19" Canvas.Top="59"/>
+            <Image Source="../Assets/images/T1.png" Visibility="{Binding T1, Converter={StaticResource lcdState}}" Canvas.Left="17" Canvas.Top="48"/>
+            <Image Source="../Assets/images/T2.png" Visibility="{Binding T2, Converter={StaticResource lcdState}}" Canvas.Left="89" Canvas.Top="96"/>
+            <Image Source="../Assets/images/T3.png" Visibility="{Binding T3, Converter={StaticResource lcdState}}" Canvas.Left="96" Canvas.Top="82"/>
+            <Image Source="../Assets/images/T4.png" Visibility="{Binding T4, Converter={StaticResource lcdState}}" Canvas.Left="49" Canvas.Top="100"/>
+            <Image Source="../Assets/images/T5.png" Visibility="{Binding T5, Converter={StaticResource lcdState}}" Canvas.Left="15" Canvas.Top="105"/>
+
+            <!-- lives -->
+            <Image Source="../Assets/images/miss.png" Visibility="{Binding LostLives, Converter={StaticResource lostLives}, ConverterParameter=1}" Canvas.Left="303" Canvas.Top="17"/>
+            <Image Source="../Assets/images/life.png" Visibility="{Binding LostLives, Converter={StaticResource lostLives}, ConverterParameter=1}" Canvas.Left="329" Canvas.Top="14"/>
+            <Image Source="../Assets/images/life.png" Visibility="{Binding LostLives, Converter={StaticResource lostLives}, ConverterParameter=2}" Canvas.Left="353" Canvas.Top="14"/>
+            <Image Source="../Assets/images/life.png" Visibility="{Binding LostLives, Converter={StaticResource lostLives}, ConverterParameter=3}" Canvas.Left="378" Canvas.Top="14"/>
+
+            <!-- errors -->
+            <Image Source="../Assets/images/crash-0.png" Visibility="{Binding PC0, Converter={StaticResource lcdState}}" Canvas.Left="422" Canvas.Top="154"/>
+            <Image Source="../Assets/images/crash-1.png" Visibility="{Binding PC1, Converter={StaticResource lcdState}}" Canvas.Left="361" Canvas.Top="160"/>
+            <Image Source="../Assets/images/crash-1.png" Visibility="{Binding PC2, Converter={StaticResource lcdState}}" Canvas.Left="140" Canvas.Top="160"/>
+
+            <Image Source="../Assets/images/mario-finished-r.png" Visibility="{Binding MFR, Converter={StaticResource lcdState}}" Canvas.Left="427" Canvas.Top="96"/>
+            <Image Source="../Assets/images/mario-finished-l.png" Visibility="{Binding MFL, Converter={StaticResource lcdState}}" Canvas.Left="426" Canvas.Top="96"/>
+
+            <Image Source="../Assets/images/mario-error-r.png" Visibility="{Binding MER, Converter={StaticResource lcdState}}" Canvas.Left="463" Canvas.Top="85"/>
+            <Image Source="../Assets/images/mario-error-l.png" Visibility="{Binding MEL, Converter={StaticResource lcdState}}" Canvas.Left="462" Canvas.Top="72"/>
+
+            <Image Source="../Assets/images/luigi-finished-r.png" Visibility="{Binding LFR, Converter={StaticResource lcdState}}" Canvas.Left="84" Canvas.Top="121"/>
+            <Image Source="../Assets/images/luigi-finished-l.png" Visibility="{Binding LFL, Converter={StaticResource lcdState}}" Canvas.Left="85" Canvas.Top="118"/>
+
+            <Image Source="../Assets/images/luigi-error-r.png" Visibility="{Binding LER, Converter={StaticResource lcdState}}" Canvas.Left="19" Canvas.Top="133"/>
+            <Image Source="../Assets/images/luigi-error-l.png" Visibility="{Binding LEL, Converter={StaticResource lcdState}}" Canvas.Left="17" Canvas.Top="123"/>
+
+
+            <!-- score -->
+            <TextBlock Text="{Binding Score, FallbackValue=0}"  Canvas.Left="465" Canvas.Top="12" Height="28" Width="64" FontSize="32" FontWeight="Bold" TextAlignment="Right"/>
+            <Image Source="../Assets/images/AM.png" Visibility="{Binding AM, Converter={StaticResource lcdState}}" Canvas.Left="449" Canvas.Top="19"/>
+            <Image Source="../Assets/images/PM.png" Visibility="{Binding PM, Converter={StaticResource lcdState}}" Canvas.Left="449" Canvas.Top="30"/>
+            <TextBlock Text="PAUSE" Visibility="{Binding PS, Converter={StaticResource lcdState}}" Canvas.Left="240" Canvas.Top="15" Height="14" Width="67" FontSize="12" FontWeight="ExtraBold" TextAlignment="Center"/>
+            <TextBlock Text="MUTE" Visibility="{Binding MT, Converter={StaticResource lcdState}}" Canvas.Left="206" Canvas.Top="15" Height="14" Width="67" FontSize="12" FontWeight="ExtraBold" TextAlignment="Center"/>
+        </Canvas>
+        <!-- commands -->
+        <Image Source="../Assets/panel.png" Canvas.Left="25" Canvas.Top="275"/>
+        <!-- media elements -->
+        <MediaElement x:Name='miss1' Source="Assets/sounds/Miss1.wav" LoadedBehavior="Manual" />
+        <MediaElement x:Name='miss2' Source="Assets/sounds/Miss2.wav" LoadedBehavior="Manual" />
+        <MediaElement x:Name='movebox' Source="Assets/sounds/Movebox.wav" LoadedBehavior="Manual" />
+        <MediaElement x:Name='movechar' Source="Assets/sounds/Movechar.wav" LoadedBehavior="Manual" />
+        <MediaElement x:Name='point' Source="Assets/sounds/Point.wav" LoadedBehavior="Manual" />
+    </Canvas>
+</Window>

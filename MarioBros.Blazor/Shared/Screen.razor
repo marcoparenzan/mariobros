@@ -1,0 +1,179 @@
+﻿@using LcdGames;
+@using System.Threading;
+@using  MarioBros.ViewModels;
+
+<div style="width:713px; height:452px; background-image: url('Assets/cover.png'); font-family:LCDBOLD; font-size:24px; font-weight:bold; color:black;">
+    <div style="width: 550px; height: 187px; position: relative; left: 80px; top: 60px; background-image: url('Assets/screen.png');">
+        <div style="visibility:@VisibilityOf("L2R", viewModel.L2R); left:118px; top:20px; width:43px; height:37px; position:absolute; background-image: url('Assets/images/luigi-2-r.png');"></div>
+        <div style="visibility:@VisibilityOf("L2L", viewModel.L2L); left:89px; top:12px; width:42px; height:44px; position:absolute; background-image: url('Assets/images/luigi-2-l.png');"></div>
+        <div style="visibility:@VisibilityOf("L1", viewModel.L1); left:121px; top:67px; width:35px; height:37px; position:absolute; background-image: url('Assets/images/luigi-1.png');"></div>
+        <div style="visibility:@VisibilityOf("L1L", viewModel.L1L); left:151px; top:66px; width:12px; height:20px; position:absolute; background-image: url('Assets/images/luigi-1-l.png');"></div>
+        <div style="visibility:@VisibilityOf("L1R", viewModel.L1R); left:144px; top:89px; width:14px; height:15px; position:absolute; background-image: url('Assets/images/luigi-1-r.png');"></div>
+        <div style="visibility:@VisibilityOf("L0", viewModel.L0); left:122px; top:115px; width:36px; height:35px; position:absolute; background-image: url('Assets/images/luigi-0.png');"></div>
+        <div style="visibility:@VisibilityOf("L0L", viewModel.L0L); left:151px; top:114px; width:15px; height:18px; position:absolute; background-image: url('Assets/images/luigi-0-l.png');"></div>
+        <div style="visibility:@VisibilityOf("L0R", viewModel.L0R); left:143px; top:132px; width:16px; height:14px; position:absolute; background-image: url('Assets/images/luigi-0-r.png');"></div>
+        <div style="visibility:@VisibilityOf("M2", viewModel.M2); left:386px; top:43px; width:37px; height:36px; position:absolute; background-image: url('Assets/images/mario-2.png');"></div>
+        <div style="visibility:@VisibilityOf("M2L", viewModel.M2L); left:381px; top:40px; width:14px; height:20px; position:absolute; background-image: url('Assets/images/mario-2-l.png');"></div>
+        <div style="visibility:@VisibilityOf("M2R", viewModel.M2R); left:386px; top:61px; width:17px; height:18px; position:absolute; background-image: url('Assets/images/mario-2-r.png');"></div>
+        <div style="visibility:@VisibilityOf("M1", viewModel.M1); left:386px; top:92px; width:37px; height:34px; position:absolute; background-image: url('Assets/images/mario-1.png');"></div>
+        <div style="visibility:@VisibilityOf("M1L", viewModel.M1L); left:379px; top:88px; width:13px; height:21px; position:absolute; background-image: url('Assets/images/mario-1-l.png');"></div>
+        <div style="visibility:@VisibilityOf("M1R", viewModel.M1R); left:384px; top:108px; width:20px; height:16px; position:absolute; background-image: url('Assets/images/mario-1-r.png');"></div>
+        <div style="visibility:@VisibilityOf("M0", viewModel.M0); left:399px; top:154px; width:25px; height:14px; position:absolute; background-image: url('Assets/images/mario-0.png');"></div>
+        <div style="visibility:@VisibilityOf("M0L", viewModel.M0L); left:375px; top:134px; width:34px; height:24px; position:absolute; background-image: url('Assets/images/mario-0-l.png');"></div>
+        <div style="visibility:@VisibilityOf("M0R", viewModel.M0R); left:413px; top:134px; width:35px; height:24px; position:absolute; background-image: url('Assets/images/mario-0-r.png');"></div>
+        <div style="visibility:@VisibilityOf("P2", viewModel.P2); transform:rotate(-30deg); left:440px; top:143px; width:21px; height:6px; position:absolute; background-image: url('Assets/images/pack0R.png');"></div>
+        <div style="visibility:@VisibilityOf("P1", viewModel.P1); left:465px; top:140px; width:21px; height:6px; position:absolute; background-image: url('Assets/images/pack0R.png');"></div>
+        <div style="visibility:@VisibilityOf("P0", viewModel.P0); left:490px; top:140px; width:21px; height:6px; position:absolute; background-image: url('Assets/images/pack0R.png');"></div>
+        <div style="visibility:@VisibilityOf("P5", viewModel.P5); left:294px; top:140px; width:21px; height:6px; position:absolute; background-image: url('Assets/images/pack0R.png');"></div>
+        <div style="visibility:@VisibilityOf("P4", viewModel.P4); left:324px; top:140px; width:21px; height:6px; position:absolute; background-image: url('Assets/images/pack0R.png');"></div>
+        <div style="visibility:@VisibilityOf("P3", viewModel.P3); left:354px; top:140px; width:21px; height:6px; position:absolute; background-image: url('Assets/images/pack0R.png');"></div>
+        <div style="visibility:@VisibilityOf("P9", viewModel.P9); transform:rotate(-30deg); left:149px; top:142px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack0L.png');"></div>
+        <div style="visibility:@VisibilityOf("P8", viewModel.P8); left:173px; top:137px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack0L.png');"></div>
+        <div style="visibility:@VisibilityOf("P7", viewModel.P7); left:203px; top:137px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack0L.png');"></div>
+        <div style="visibility:@VisibilityOf("P6", viewModel.P6); left:233px; top:137px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack0L.png');"></div>
+        <div style="visibility:@VisibilityOf("P10", viewModel.P10); transform:rotate(-30deg); left:166px; top:113px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack0L.png');"></div>
+        <div style="visibility:@VisibilityOf("P11", viewModel.P11); left:191px; top:113px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack0L.png');"></div>
+        <div style="visibility:@VisibilityOf("P12", viewModel.P12); left:216px; top:113px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack0L.png');"></div>
+        <div style="visibility:@VisibilityOf("P13", viewModel.P13); left:240px; top:113px; width:14px; height:12px; position:absolute; background-image: url('Assets/images/pack0LH.png');"></div>
+        <div style="visibility:@VisibilityOf("P14", viewModel.P14); left:293px; top:113px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack1R.png');"></div>
+        <div style="visibility:@VisibilityOf("P15", viewModel.P15); left:319px; top:113px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack1R.png');"></div>
+        <div style="visibility:@VisibilityOf("P16", viewModel.P16); left:349px; top:113px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack1R.png');"></div>
+        <div style="visibility:@VisibilityOf("P17", viewModel.P17); transform:rotate(23deg); left:376px; top:115px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack1R.png');"></div>
+        <div style="visibility:@VisibilityOf("P21", viewModel.P21); left:293px; top:89px; width:14px; height:11px; position:absolute; background-image: url('Assets/images/pack1RH.png');"></div>
+        <div style="visibility:@VisibilityOf("P20", viewModel.P20); left:310px; top:90px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack1R.png');"></div>
+        <div style="visibility:@VisibilityOf("P19", viewModel.P19); left:335px; top:89px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack1R.png');"></div>
+        <div style="visibility:@VisibilityOf("P18", viewModel.P18); left:359px; top:89px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack1R.png');"></div>
+        <div style="visibility:@VisibilityOf("P25", viewModel.P25); transform:rotate(-30deg); left:153px; top:90px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack2L.png');"></div>
+        <div style="visibility:@VisibilityOf("P24", viewModel.P24); left:179px; top:90px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack2L.png');"></div>
+        <div style="visibility:@VisibilityOf("P23", viewModel.P23); left:207px; top:90px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack2L.png');"></div>
+        <div style="visibility:@VisibilityOf("P22", viewModel.P22); left:233px; top:90px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack2L.png');"></div>
+        <div style="visibility:@VisibilityOf("P26", viewModel.P26); transform:rotate(-30deg); left:160px; top:67px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack2L.png');"></div>
+        <div style="visibility:@VisibilityOf("P27", viewModel.P27); left:184px; top:67px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack2L.png');"></div>
+        <div style="visibility:@VisibilityOf("P28", viewModel.P28); left:212px; top:67px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack2L.png');"></div>
+        <div style="visibility:@VisibilityOf("P29", viewModel.P29); left:240px; top:67px; width:13px; height:12px; position:absolute; background-image: url('Assets/images/pack2LH.png');"></div>
+        <div style="visibility:@VisibilityOf("P30", viewModel.P30); left:292px; top:66px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack3R.png');"></div>
+        <div style="visibility:@VisibilityOf("P31", viewModel.P31); left:317px; top:66px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack3R.png');"></div>
+        <div style="visibility:@VisibilityOf("P32", viewModel.P32); left:342px; top:66px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack3R.png');"></div>
+        <div style="visibility:@VisibilityOf("P33", viewModel.P33); transform:rotate(23deg); left:368px; top:66px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack3R.png');"></div>
+        <div style="visibility:@VisibilityOf("P37", viewModel.P37); left:293px; top:43px; width:11px; height:12px; position:absolute; background-image: url('Assets/images/pack3RH.png');"></div>
+        <div style="visibility:@VisibilityOf("P36", viewModel.P36); left:308px; top:43px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack3R.png');"></div>
+        <div style="visibility:@VisibilityOf("P35", viewModel.P35); left:332px; top:43px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack3R.png');"></div>
+        <div style="visibility:@VisibilityOf("P34", viewModel.P34); left:356px; top:43px; width:21px; height:12px; position:absolute; background-image: url('Assets/images/pack3R.png');"></div>
+        <div style="visibility:@VisibilityOf("P41", viewModel.P41); transform:rotate(-30deg); left:154px; top:47px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("P40", viewModel.P40); left:179px; top:44px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("P39", viewModel.P39); left:204px; top:44px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("P38", viewModel.P38); left:229px; top:44px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("PT0", viewModel.PT0); left:53px; top:85px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("PT2", viewModel.PT2); left:53px; top:72px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("PT4", viewModel.PT4); left:53px; top:58px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("PT6", viewModel.PT6); left:53px; top:46px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("PT8", viewModel.PT8); left:53px; top:30px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("PT1", viewModel.PT1); left:75px; top:85px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("PT3", viewModel.PT3); left:75px; top:72px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("PT5", viewModel.PT5); left:75px; top:58px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("PT7", viewModel.PT7); left:75px; top:46px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("PT9", viewModel.PT9); left:78px; top:23px; width:21px; height:11px; position:absolute; background-image: url('Assets/images/pack4L.png');"></div>
+        <div style="visibility:@VisibilityOf("T0", viewModel.T0); left:19px; top:59px; width:78px; height:51px; position:absolute; background-image: url('Assets/images/T0.png');"></div>
+        <div style="visibility:@VisibilityOf("T1", viewModel.T1); left:17px; top:48px; width:21px; height:31px; position:absolute; background-image: url('Assets/images/T1.png');"></div>
+        <div style="visibility:@VisibilityOf("T2", viewModel.T2); left:89px; top:96px; width:16px; height:12px; position:absolute; background-image: url('Assets/images/T2.png');"></div>
+        <div style="visibility:@VisibilityOf("T3", viewModel.T3); left:96px; top:82px; width:18px; height:27px; position:absolute; background-image: url('Assets/images/T3.png');"></div>
+        <div style="visibility:@VisibilityOf("T4", viewModel.T4); left:49px; top:100px; width:25px; height:9px; position:absolute; background-image: url('Assets/images/T4.png');"></div>
+        <div style="visibility:@VisibilityOf("T5", viewModel.T5); left:15px; top:105px; width:16px; height:5px; position:absolute; background-image: url('Assets/images/T5.png');"></div>
+        <div style="visibility:@VisibilityOf("LostLives", ()=> viewModel.LostLives >= 1); left:303px; top:17px; width:23px; height:8px; position:absolute; background-image: url('Assets/images/miss.png');"></div>
+        <div style="visibility:@VisibilityOf("LostLives", ()=> viewModel.LostLives >= 1); left:329px; top:14px; width:20px; height:17px; position:absolute; background-image: url('Assets/images/life.png');"></div>
+        <div style="visibility:@VisibilityOf("LostLives", ()=> viewModel.LostLives >= 2); left:353px; top:14px; width:20px; height:17px; position:absolute; background-image: url('Assets/images/life.png');"></div>
+        <div style="visibility:@VisibilityOf("LostLives", ()=> viewModel.LostLives >= 3); left:378px; top:14px; width:20px; height:17px; position:absolute; background-image: url('Assets/images/life.png');"></div>
+        <div style="visibility:@VisibilityOf("PC0", viewModel.PC0); left:422px; top:154px; width:47px; height:21px; position:absolute; background-image: url('Assets/images/crash-0.png');"></div>
+        <div style="visibility:@VisibilityOf("PC1", viewModel.PC1); left:361px; top:160px; width:35px; height:17px; position:absolute; background-image: url('Assets/images/crash-1.png');"></div>
+        <div style="visibility:@VisibilityOf("PC2", viewModel.PC2); left:140px; top:160px; width:35px; height:17px; position:absolute; background-image: url('Assets/images/crash-1.png');"></div>
+        <div style="visibility:@VisibilityOf("MFR", viewModel.MFR); left:427px; top:96px; width:34px; height:30px; position:absolute; background-image: url('Assets/images/mario-finished-r.png');"></div>
+        <div style="visibility:@VisibilityOf("MFL", viewModel.MFL); left:426px; top:96px; width:36px; height:28px; position:absolute; background-image: url('Assets/images/mario-finished-l.png');"></div>
+        <div style="visibility:@VisibilityOf("MER", viewModel.MER); left:463px; top:85px; width:65px; height:40px; position:absolute; background-image: url('Assets/images/mario-error-r.png');"></div>
+        <div style="visibility:@VisibilityOf("MEL", viewModel.MEL); left:462px; top:72px; width:73px; height:55px; position:absolute; background-image: url('Assets/images/mario-error-l.png');"></div>
+        <div style="visibility:@VisibilityOf("LFR", viewModel.LFR); left:84px; top:121px; width:39px; height:28px; position:absolute; background-image: url('Assets/images/luigi-finished-r.png');"></div>
+        <div style="visibility:@VisibilityOf("LFL", viewModel.LFL); left:85px; top:118px; width:37px; height:31px; position:absolute; background-image: url('Assets/images/luigi-finished-l.png');"></div>
+        <div style="visibility:@VisibilityOf("LER", viewModel.LER); left:19px; top:133px; width:68px; height:41px; position:absolute; background-image: url('Assets/images/luigi-error-r.png');"></div>
+        <div style="visibility:@VisibilityOf("LEL", viewModel.LEL); left:17px; top:123px; width:69px; height:52px; position:absolute; background-image: url('Assets/images/luigi-error-l.png');"></div>
+        <div style="visibility:@VisibilityOf("AM", viewModel.AM); left:449px; top:19px; width:14px; height:8px; position:absolute; background-image: url('Assets/images/AM.png');"></div>
+        <div style="visibility:@VisibilityOf("PM", viewModel.PM); left:449px; top:30px; width:14px; height:8px; position:absolute; background-image: url('Assets/images/PM.png');"></div>
+        <div style="left:465px; top:12px; width:64px; height:28px; position:absolute; text-align:right;">@viewModel.Score</div>
+    </div>
+    <div style="width:670px; height:155px; position:relative; left:25px; top:70px;  background-image: url('Assets/panel.png');"></div>
+</div>
+
+@code {
+
+    private static Queue<string> commands = new Queue<string>();
+
+    [JSInvokable("PushCommand")]
+    public static void PushCommand(string command)
+    {
+        commands.Enqueue(command);
+    }
+
+    private static string PopCommand()
+    {
+        if (commands.Count <= 0) return string.Empty;
+        return commands.Dequeue();
+    }
+
+    private MarioBrosViewModel viewModel;
+    private Task timer;
+
+    private string VisibilityOf(string propertyName, Func<bool> predicate) => predicate() ? "visible" : "hidden";
+    private string VisibilityOf(string propertyName, LcdGames.LcdGamePinState value) => value == LcdGames.LcdGamePinState.On ? "visible" : "hidden";
+
+    protected override void OnInitialized()
+    {
+        viewModel = new MarioBros.ViewModels.MarioBrosViewModel(null);
+
+        async Task action()
+        {
+            var delay = 200;
+            var checkDelay = delay / 10;
+            var then = DateTime.Now.AddMilliseconds(delay);
+            while (true)
+            {
+                viewModel.Clock();
+                await InvokeAsync(StateHasChanged);
+                while (DateTime.Now < then)
+                {
+                    switch (PopCommand())
+                    {
+                        case "acl":
+                            viewModel.ACL.Execute(null);
+                            await InvokeAsync(StateHasChanged);
+                            break;
+                        case "gamea":
+                            viewModel.GameA.Execute(null);
+                            await InvokeAsync(StateHasChanged);
+                            break;
+                        case "luigiup":
+                            viewModel.LuigiUp.Execute(null);
+                            await InvokeAsync(StateHasChanged);
+                            break;
+                        case "luigidown":
+                            viewModel.LuigiDown.Execute(null);
+                            await InvokeAsync(StateHasChanged);
+                            break;
+                        case "marioup":
+                            viewModel.MarioUp.Execute(null);
+                            await InvokeAsync(StateHasChanged);
+                            break;
+                        case "mariodown":
+                            viewModel.MarioDown.Execute(null);
+                            await InvokeAsync(StateHasChanged);
+                            break;
+                        default:
+                            await Task.Delay(checkDelay);
+                            break;
+                    }
+                }
+                then = DateTime.Now.AddMilliseconds(200);
+            }
+        }
+
+        var time = Task.Factory.StartNew(action);
+    }
+
+}

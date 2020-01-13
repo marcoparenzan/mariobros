@@ -1,0 +1,1 @@
+docker run -p 80:80 mpkubernetes.azurecr.io/mariobrosblazor
